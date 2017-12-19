@@ -65,7 +65,7 @@ class PlayPublisherPlugin implements Plugin<Project> {
                 playResourcesTask.inputs.file(project.file("src/${variant.flavorName}/play"))
             }
             
-            throw new Exception(project.file("src/${variant.flavorName}/play").toString())
+
             
             playResourcesTask.inputs.file(project.file("src/${variant.buildType.name}/play"))
             playResourcesTask.inputs.file(project.file("src/${variant.name}/play"))
