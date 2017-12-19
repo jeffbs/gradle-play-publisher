@@ -54,6 +54,10 @@ class PlayPublisherPlugin implements Plugin<Project> {
             } else {
                 bootstrapTask.outputFolder = project.file('src/main/play')
             }
+            
+            throw new Exception(project.file("src/${variant.flavorName}/play").toString())
+            
+            
             bootstrapTask.playAccountConfig = playAccountConfig
             bootstrapTask.description = "Downloads the play store listing for the ${variant.name.capitalize()} build. No download of image resources. See #18."
             bootstrapTask.group = PLAY_STORE_GROUP
