@@ -64,6 +64,9 @@ class PlayPublisherPlugin implements Plugin<Project> {
             if (!variant.flavorName.isEmpty()) {
                 playResourcesTask.inputs.file(project.file("src/${variant.flavorName}/play"))
             }
+            
+            throw new Exception(project.file("src/${variant.flavorName}/play"))
+            
             playResourcesTask.inputs.file(project.file("src/${variant.buildType.name}/play"))
             playResourcesTask.inputs.file(project.file("src/${variant.name}/play"))
             playResourcesTask.outputFolder = project.file("${RESOURCES_OUTPUT_PATH}/${variant.name}")
